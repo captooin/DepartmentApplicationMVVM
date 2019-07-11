@@ -9,7 +9,7 @@ namespace DepartmentsApplicationMVVM.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(DepartmentsApplicationMVVM.Model.DepartmentsDbContext context)
