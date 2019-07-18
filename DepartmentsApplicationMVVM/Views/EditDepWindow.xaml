@@ -1,0 +1,20 @@
+﻿<Window x:Class="DepartmentsApplicationMVVM.Views.EditDepWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DepartmentsApplicationMVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="Department Window" Height="170.339" Width="311.864">
+    <Window.DataContext>
+        <local:DepartmentsVM/>
+    </Window.DataContext>
+    <Grid>
+        <TextBox x:Name="tbName" HorizontalAlignment="Left" Height="23" Margin="21,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" />
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="21,81,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-2.765,-1.856" 
+                Command="{Binding AddDepartmentCommand}"
+                CommandParameter="{Binding ElementName=tbName, Path=Text}"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="206,81,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Введите название отдела:" HorizontalAlignment="Left" Margin="21,15,0,0" VerticalAlignment="Top" Width="260"/>
+    </Grid>
+</Window>

@@ -17,26 +17,17 @@ namespace DepartmentsApplicationMVVM.Model
             Name = name;
         }
 
-        private string _name;
         public int DepartmentId { get; set; }
+
+        private string _name;
         public string Name
         {
             get => _name;
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
-            }
+            set => _name = value;
         }
 
         public virtual ObservableCollection<Employee> Employees { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override string ToString()
         {
             return Name;

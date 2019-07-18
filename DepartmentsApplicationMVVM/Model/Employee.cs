@@ -9,10 +9,12 @@ namespace DepartmentsApplicationMVVM.Model
     public class Employee
     {
         public Employee() { }
-        public Employee(string name)
+        public Employee(string firstname, string lastname, int age, int salary, Department department)
         {
-            Firstname = name;
-            Lastname = name + "skiy";
+            Firstname = firstname;
+            Lastname = lastname;
+            Age = age;
+            Salary = salary;
         }
         public int EmployeeId { get; set; }
         public string Firstname { get; set; }

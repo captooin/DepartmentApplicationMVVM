@@ -3,12 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DepartmentsApplicationMVVM"
+        xmlns:local="clr-namespace:DepartmentsApplicationMVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="535.593">
+        Title="MainWindow" Height="450" Width="515.593">
+    <Window.DataContext>
+        <local:DepartmentsVM/>
+    </Window.DataContext>
     <Grid>
-        <ComboBox x:Name="DepartmentView" HorizontalAlignment="Left" Margin="51,39,0,0" VerticalAlignment="Top" Width="303" />
-        <ListView x:Name="EmployeeView" HorizontalAlignment="Left" Height="288" Margin="51,86,0,0" VerticalAlignment="Top" Width="303">
+        <ComboBox x:Name="DepartmentView" HorizontalAlignment="Left" Margin="51,39,0,0" VerticalAlignment="Top" Width="303" ItemsSource="{Binding pDepartmentList, Mode=OneWay}" />
+        <ListView x:Name="EmployeeView" HorizontalAlignment="Left" Height="288" Margin="51,86,0,0" VerticalAlignment="Top" Width="303" ItemsSource="{Binding pEmloyeeList, Mode=OneWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Firstname"  DisplayMemberBinding="{Binding firstname}" />
@@ -27,3 +30,4 @@
 
     </Grid>
 </Window>
+

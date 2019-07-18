@@ -1,5 +1,4 @@
-﻿using DepartmentsApplicationMVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,20 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DepartmentsApplicationMVVM.Views
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditDepWindow : Window
     {
-        public MainWindow()
+        public EditDepWindow()
         {
             InitializeComponent();
-            btnAddDep.Click += delegate { EditDepWindow depWindow = new EditDepWindow(); depWindow.ShowDialog(); };
+            btnCancel.Click += delegate { this.DialogResult = false; };
+            btnOK.Click += delegate { this.DialogResult = true; };
+
         }
     }
 }
